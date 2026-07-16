@@ -1,0 +1,62 @@
+/**
+ * ⚠️ THEME CONFIGURATION — Tailwind v4
+ * Add theme values inside `@theme { }`. Do NOT nest `@media`, `@layer`, or `@import` here.
+ * Use hex colors only — no `rgba()`, `rgb()`, `hsl()`, or `hsla()`.
+ */
+
+@theme {
+  /* Vootrip Vibrante - Cores tropicais e de viagem */
+  --color-primary: #FF6B35;
+  --color-primary-hover: #E55A2B;
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-secondary: #00B4D8;
+  --color-secondary-hover: #0096B4;
+  --color-secondary-foreground: #FFFFFF;
+  
+  --color-accent: #FFD166;
+  --color-accent-hover: #F5C142;
+  --color-accent-foreground: #1A1A2E;
+  
+  --color-background: #FAFBFC;
+  --color-foreground: #1A1A2E;
+  
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A2E;
+  
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
+  
+  --color-border: #E2E8F0;
+  --color-input: #E2E8F0;
+  
+  --color-success: #06D6A0;
+  --color-warning: #FFD166;
+  --color-error: #EF476F;
+  
+  /* Gradientes de viagem */
+  --color-sunset-start: #FF6B35;
+  --color-sunset-end: #FF9F1C;
+  --color-ocean-start: #00B4D8;
+  --color-ocean-end: #0077B6;
+  --color-tropical-start: #06D6A0;
+  --color-tropical-end: #00B4D8;
+  
+  /* Tipografia */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Espaçamentos e bordas */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 #0000000D;
+  --shadow-md: 0 4px 6px -1px #0000001A, 0 2px 4px -2px #0000001A;
+  --shadow-lg: 0 10px 15px -3px #0000001A, 0 4px 6px -4px #0000001A;
+  --shadow-xl: 0 20px 25px -5px #0000001A, 0 8px 10px -6px #0000001A;
+}

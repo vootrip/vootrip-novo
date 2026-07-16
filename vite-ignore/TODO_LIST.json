@@ -1,0 +1,37 @@
+{
+  "summary": "Criar páginas que faltam no Vootrip",
+  "todos": [
+    {
+      "id": 1,
+      "description": "Páginas legais (Termos e Privacidade)",
+      "files": [],
+      "status": "complete"
+    },
+    {
+      "id": 2,
+      "description": "Páginas de conteúdo (Destinos e Ofertas)",
+      "files": [],
+      "status": "complete"
+    },
+    {
+      "id": 3,
+      "description": "Corrigir links do Sidebar e Header",
+      "files": [],
+      "status": "complete"
+    },
+    {
+      "id": 4,
+      "description": "Integrar Newsletter com Formspree",
+      "files": [],
+      "status": "complete"
+    },
+    {
+      "id": 5,
+      "description": "Registrar rotas no App.tsx",
+      "files": [],
+      "status": "complete"
+    }
+  ],
+  "createdAt": "2026-07-15T00:33:17.294Z",
+  "updatedAt": "2026-07-15T00:37:31.196Z"
+}

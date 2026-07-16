@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Logos Vootrip</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: system-ui, sans-serif; 
+      background: #f5f5f5; 
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    h1 { color: #1a1a2e; margin-bottom: 40px; }
+    .logos { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+    .logo-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .logo-card img { 
+      max-width: 200px; 
+      max-height: 200px; 
+      margin-bottom: 20px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fafafa;
+    }
+    .logo-card h3 { color: #333; margin-bottom: 15px; }
+    .logo-card a {
+      display: inline-block;
+      background: #FF6B35;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .logo-card a:hover { background: #e55a2b; }
+    .tip { margin-top: 40px; color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>📥 Download Logos Vootrip</h1>
+  
+  <div class="logos">
+    <div class="logo-card">
+      <img src="/vootrip-logo.png" alt="Ícone Vootrip">
+      <h3>Ícone / Símbolo</h3>
+      <a href="/vootrip-logo.png" download="vootrip-icone.png">⬇ Baixar Ícone</a>
+    </div>
+    
+    <div class="logo-card">
+      <img src="/vootrip-logo-full.png" alt="Logo Completa Vootrip">
+      <h3>Logo Completa</h3>
+      <a href="/vootrip-logo-full.png" download="vootrip-logo.png">⬇ Baixar Logo</a>
+    </div>
+  </div>
+  
+  <p class="tip">Clique nos botões para baixar ou clique com botão direito na imagem → "Salvar imagem como..."</p>
+</body>
+</html>
