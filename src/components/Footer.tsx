@@ -137,14 +137,14 @@ export function Footer() {
           <div data-ev-id="ev_cert3c4d5e" className="flex flex-wrap items-center justify-center gap-6">
             <div data-ev-id="ev_cert4d5e6f" className="bg-white rounded-xl px-6 py-3 flex items-center justify-center">
               <img
-                src="/cadastur-logo.png"
+                src="/logomarca-cadastur-e1586296578734.png"
                 alt="Cadastur - Cadastro de Turismo do Ministério do Turismo"
                 className="h-10 w-auto object-contain"
               />
             </div>
             <div data-ev-id="ev_cert5e6f7a" className="bg-white rounded-xl px-6 py-3 flex items-center justify-center">
               <img
-                src="/orlando-travel-academy-logo.webp"
+                src="/Logo-orlando-travel-academy.webp"
                 alt="Orlando Travel Academy - Certified Expert Orlando"
                 className="h-10 w-auto object-contain"
               />
