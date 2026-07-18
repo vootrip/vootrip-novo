@@ -13,42 +13,42 @@ export default function Index() {
   return (
     <Layout showHero>
       {/* Hero Section */}
-      <section data-ev-id="ev_f9c42e4435" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] min-h-[400px] max-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Background */}
-        <div data-ev-id="ev_920ff14330" className="absolute inset-0">
-          <img data-ev-id="ev_48ff094dd2"
-          src={heroImage}
-          alt="Praia tropical paradisíaca vista aérea"
-          className="w-full h-full object-cover" />
-
-          <div data-ev-id="ev_04feb48672" className="absolute inset-0 bg-gradient-to-b from-[#1A1A2E]/60 via-[#1A1A2E]/40 to-[#1A1A2E]/70" />
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Praia tropical paradisíaca vista aérea"
+            className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A2E]/40 via-[#1A1A2E]/20 to-[#1A1A2E]/50" />
         </div>
 
         {/* Content */}
-        <div data-ev-id="ev_7d593b09ad" className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
-          <div data-ev-id="ev_c67b98dacc" className="text-center mb-10">
-            <h1 data-ev-id="ev_96fee7dddf" className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance">
-              Sua próxima aventura<br data-ev-id="ev_17853b6243" />
-              <span data-ev-id="ev_0a1d802040" className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B35] to-[#FFD166]">
-                começa aqui
-              </span>
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+          <div className="text-center mb-4">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#FF6B35] rounded-full text-white text-sm font-semibold mb-4 shadow-lg">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              <span>NOVIDADE</span>
+            </div>
+
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
+              Planeje sua viagem dos sonhos ✨
             </h1>
-            <p data-ev-id="ev_3878039489" className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto text-pretty">
-              Compare preços de voos, hotéis, carros e traslados em tempo real. 
-              Encontre as melhores ofertas para viajar mais gastando menos.
+            <p className="text-sm md:text-base text-white/80 max-w-md mx-auto">
+              Tudo que você precisa para viajar em um só lugar
             </p>
-          </div>
-
-          <SearchTabs />
-        </div>
-
-        {/* Scroll Indicator */}
-        <div data-ev-id="ev_68fd800613" className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div data-ev-id="ev_20d5fd71ce" className="w-8 h-12 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-            <div data-ev-id="ev_c205ab6ab6" className="w-1.5 h-3 bg-white/60 rounded-full" />
           </div>
         </div>
       </section>
+
+      {/* Search Tabs - Sobrepondo o hero */}
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20">
+        <SearchTabs />
+      </div>
+
+      {/* Spacer */}
+      <div className="h-12" />
 
       {/* Popular Destinations */}
       <PopularDestinations />
@@ -71,5 +71,4 @@ export default function Index() {
       {/* Newsletter */}
       <Newsletter />
     </Layout>);
-
 }
