@@ -399,37 +399,37 @@ export default function Disney() {
                   <p data-ev-id="ev_abba75d627" className="text-[#64748B] mt-2">Carregando parques...</p>
                 </div> :
               parques.map((parque) =>
-              <div data-ev-id="ev_efbbb1e2f5" key={parque.id} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+              <div data-ev-id="ev_efbbb1e2f5" key={parque.id} className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-[#1E293B]">
                   {/* Imagem */}
-                  <div data-ev-id="ev_79e26e50ec" className="aspect-video overflow-hidden">
+                  <div data-ev-id="ev_79e26e50ec" className="aspect-video overflow-hidden relative">
                     <img data-ev-id="ev_a8a14f9b8c" src={parque.imagem} alt={parque.nome} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div data-ev-id="ev_d6157aee7f" className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-transparent to-transparent" />
                   </div>
                   
-                  {/* Gradiente - fica mais escuro no hover */}
-                  <div data-ev-id="ev_dbca054a80" className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/70 group-hover:to-black/30 transition-all duration-500" />
-                  
-                  {/* Conteúdo - versão compacta (visível por padrão) */}
-                  <div data-ev-id="ev_2755f76320" className="absolute bottom-0 left-0 right-0 p-6 transition-all duration-500">
-                    <h3 data-ev-id="ev_aed87fe3d2" className="text-2xl font-bold text-white mb-2 drop-shadow-lg">{parque.nome}</h3>
+                  {/* Conteúdo - abaixo da imagem, expande no hover */}
+                  <div data-ev-id="ev_b6987cc343" className="p-6 transition-all duration-500">
+                    <h3 data-ev-id="ev_79e845a9b5" className="text-2xl font-bold text-white mb-3">{parque.nome}</h3>
                     
-                    {/* Descrição - truncada por padrão, completa no hover */}
-                    <p data-ev-id="ev_66dafc88b4" className="text-white/90 mb-3 drop-shadow-md line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
-                      {parque.descricao}
-                    </p>
-                    
-                    {/* Badges - aparecem com fade no hover */}
-                    <div data-ev-id="ev_4fb14f1b20" className="flex flex-wrap gap-2 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500">
-                      {parque.destaques.map((destaque, i) =>
-                    <span data-ev-id="ev_2f1af1c1ac" key={i} className="px-3 py-1.5 bg-[#FF6B35]/90 backdrop-blur-sm text-white text-xs font-medium rounded-full shadow-lg">
-                          {destaque}
-                        </span>
-                    )}
+                    {/* Descrição - altura limitada por padrão, expande no hover */}
+                    <div data-ev-id="ev_0925d20e65" className="overflow-hidden transition-all duration-500 max-h-[3.5rem] group-hover:max-h-[500px]">
+                      <p data-ev-id="ev_e8a24557e6" className="text-[#94A3B8] leading-relaxed">
+                        {parque.descricao}
+                      </p>
                     </div>
                     
                     {/* Indicador "Ver mais" - some no hover */}
-                    <div data-ev-id="ev_75620b2914" className="flex items-center gap-2 mt-3 text-white/60 text-sm group-hover:opacity-0 transition-opacity duration-300">
-                      <span data-ev-id="ev_282ca2245d">Passe o mouse para ver mais</span>
-                      <span data-ev-id="ev_b508c3e721" className="animate-bounce">↑</span>
+                    <div data-ev-id="ev_4fb14f1b20" className="flex items-center gap-2 mt-2 text-[#FF6B35] text-sm group-hover:hidden transition-all">
+                      <span data-ev-id="ev_e495da86ad">Ver descrição completa</span>
+                      <span data-ev-id="ev_e860db0634">→</span>
+                    </div>
+                    
+                    {/* Badges - aparecem no hover */}
+                    <div data-ev-id="ev_b7d9ac5e15" className="flex flex-wrap gap-2 mt-4 overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                      {parque.destaques.map((destaque, i) =>
+                    <span data-ev-id="ev_9a67ad902d" key={i} className="px-3 py-1.5 bg-[#FF6B35] text-white text-xs font-medium rounded-full">
+                          {destaque}
+                        </span>
+                    )}
                     </div>
                   </div>
                 </div>
