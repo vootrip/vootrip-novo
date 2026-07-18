@@ -15,7 +15,8 @@ import {
   Eye,
   DollarSign,
   Loader2,
-  Briefcase } from
+  Briefcase,
+  Castle } from
 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 
