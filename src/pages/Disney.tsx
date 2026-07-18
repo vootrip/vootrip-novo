@@ -809,7 +809,7 @@ export default function Disney() {
                   alt="Entrada do Magic Kingdom em Orlando"
                   className="rounded-2xl shadow-xl w-full h-auto"
                 />
-                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[90%] bg-white rounded-xl shadow-lg px-5 py-4 flex items-center gap-3 border border-[#E2E8F0]">
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-[90%] bg-white rounded-xl shadow-lg px-5 py-4 flex items-center gap-3 border border-[#E2E8F0]">
                   <span className="text-2xl">🚗✨</span>
                   <p className="text-[#1A1A2E] text-sm font-medium leading-snug">
                     Com seu carro alugado, é só dirigir e chegar direto na magia — sem depender de transfer ou fila de ônibus.
