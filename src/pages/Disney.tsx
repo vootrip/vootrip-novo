@@ -687,37 +687,37 @@ export default function Disney() {
                 </div>
               ) : (
                 parques.map((parque) => (
-                  <div key={parque.id} className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-[#1E293B]">
+                  <div key={parque.id} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
                     {/* Imagem */}
-                    <div className="aspect-video overflow-hidden relative">
+                    <div className="aspect-video overflow-hidden">
                       <img src={parque.imagem} alt={parque.nome} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-transparent to-transparent" />
                     </div>
 
-                    {/* Conteúdo - abaixo da imagem, expande no hover */}
-                    <div className="p-6 transition-all duration-500">
-                      <h3 className="text-2xl font-bold text-white mb-3">{parque.nome}</h3>
+                    {/* Gradiente - fica mais escuro no hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/70 group-hover:to-black/30 transition-all duration-500" />
 
-                      {/* Descrição - altura limitada por padrão, expande no hover */}
-                      <div className="overflow-hidden transition-all duration-500 max-h-[3.5rem] group-hover:max-h-[500px]">
-                        <p className="text-[#94A3B8] leading-relaxed">
-                          {parque.descricao}
-                        </p>
-                      </div>
+                    {/* Conteúdo sobreposto */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 transition-all duration-500">
+                      <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">{parque.nome}</h3>
 
-                      {/* Indicador "Ver mais" - some no hover */}
-                      <div className="flex items-center gap-2 mt-2 text-[#FF6B35] text-sm group-hover:hidden transition-all">
-                        <span>Ver descrição completa</span>
-                        <span>→</span>
-                      </div>
+                      {/* Descrição - truncada por padrão, completa no hover */}
+                      <p className="text-white/90 mb-3 drop-shadow-md line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+                        {parque.descricao}
+                      </p>
 
-                      {/* Badges - aparecem no hover */}
-                      <div className="flex flex-wrap gap-2 mt-4 overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
+                      {/* Badges laranja - aparecem com fade no hover */}
+                      <div className="flex flex-wrap gap-2 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500">
                         {parque.destaques.map((destaque, i) => (
-                          <span key={i} className="px-3 py-1.5 bg-[#FF6B35] text-white text-xs font-medium rounded-full">
+                          <span key={i} className="px-3 py-1.5 bg-[#FF6B35]/90 backdrop-blur-sm text-white text-xs font-medium rounded-full shadow-lg">
                             {destaque}
                           </span>
                         ))}
+                      </div>
+
+                      {/* Indicador laranja - some no hover */}
+                      <div className="flex items-center gap-2 mt-3 text-[#FF6B35] text-sm group-hover:opacity-0 transition-opacity duration-300">
+                        <span>Passe o mouse para ver mais</span>
+                        <span className="animate-bounce">↑</span>
                       </div>
                     </div>
                   </div>
