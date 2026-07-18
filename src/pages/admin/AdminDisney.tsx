@@ -33,23 +33,23 @@ const emptyForm: FormData = {
 
 // Lista de hotéis Disney para seleção
 const HOTEIS_DISNEY = [
-  'Disney\'s All-Star Movies Resort',
-  'Disney\'s All-Star Music Resort',
-  'Disney\'s All-Star Sports Resort',
-  'Disney\'s Art of Animation Resort',
-  'Disney\'s Pop Century Resort',
-  'Disney\'s Caribbean Beach Resort',
-  'Disney\'s Coronado Springs Resort',
-  'Disney\'s Port Orleans Resort - French Quarter',
-  'Disney\'s Port Orleans Resort - Riverside',
-  'Disney\'s Animal Kingdom Lodge',
-  'Disney\'s Beach Club Resort',
-  'Disney\'s BoardWalk Inn',
-  'Disney\'s Contemporary Resort',
-  'Disney\'s Grand Floridian Resort & Spa',
-  'Disney\'s Polynesian Village Resort',
-  'Disney\'s Wilderness Lodge',
-  'Disney\'s Yacht Club Resort',
+  "Disney's All-Star Movies Resort",
+  "Disney's All-Star Music Resort",
+  "Disney's All-Star Sports Resort",
+  "Disney's Art of Animation Resort",
+  "Disney's Pop Century Resort",
+  "Disney's Caribbean Beach Resort",
+  "Disney's Coronado Springs Resort",
+  "Disney's Port Orleans Resort - French Quarter",
+  "Disney's Port Orleans Resort - Riverside",
+  "Disney's Animal Kingdom Lodge",
+  "Disney's Beach Club Resort",
+  "Disney's BoardWalk Inn",
+  "Disney's Contemporary Resort",
+  "Disney's Grand Floridian Resort & Spa",
+  "Disney's Polynesian Village Resort",
+  "Disney's Wilderness Lodge",
+  "Disney's Yacht Club Resort",
   'Outro hotel (especificar na descrição)'
 ];
 
@@ -61,6 +61,7 @@ const PLANOS_REFEICOES = [
   'Disney Dining Plan Plus',
   'Deluxe Dining Plan'
 ];
+
 export default function AdminDisney() {
   const { packages, loading, createPackage, updatePackage, deletePackage } = useDisneyPackages();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -82,7 +83,11 @@ export default function AdminDisney() {
       destaque: pkg.destaque ?? false,
       inclui: (pkg.inclui ?? []).join('\n'),
       imagem: pkg.imagem ?? '',
-      descricao: pkg.descricao ?? ''
+      descricao: pkg.descricao ?? '',
+      periodo_estadia: pkg.periodo_estadia ?? '',
+      hotel: pkg.hotel ?? '',
+      ingressos_disney: pkg.ingressos_disney ?? false,
+      plano_refeicoes: pkg.plano_refeicoes ?? ''
     });
     setEditingId(pkg.id);
     setIsModalOpen(true);
@@ -104,7 +109,11 @@ export default function AdminDisney() {
       destaque: formData.destaque,
       inclui: incluiArray,
       imagem: formData.imagem || null,
-      descricao: formData.descricao || null
+      descricao: formData.descricao || null,
+      periodo_estadia: formData.periodo_estadia || null,
+      hotel: formData.hotel || null,
+      ingressos_disney: formData.ingressos_disney,
+      plano_refeicoes: formData.plano_refeicoes || null
     };
 
     if (editingId) {
@@ -293,15 +302,71 @@ export default function AdminDisney() {
                   />
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div>
+                  <label className="block text-sm font-medium text-[#1A1A2E] mb-1">Período da Estadia</label>
                   <input
-                    type="checkbox"
-                    id="destaque"
-                    checked={formData.destaque}
-                    onChange={(e) => setFormData({ ...formData, destaque: e.target.checked })}
-                    className="w-5 h-5 text-[#FF6B35] rounded"
+                    type="text"
+                    value={formData.periodo_estadia}
+                    onChange={(e) => setFormData({ ...formData, periodo_estadia: e.target.value })}
+                    className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                    placeholder="Ex: 01/03 a 08/03/2025"
                   />
-                  <label htmlFor="destaque" className="text-sm text-[#1A1A2E]">Marcar como destaque</label>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#1A1A2E] mb-1">Hospedagem (Hotel Disney)</label>
+                  <select
+                    value={formData.hotel}
+                    onChange={(e) => setFormData({ ...formData, hotel: e.target.value })}
+                    className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35] bg-white"
+                  >
+                    <option value="">Selecione um hotel...</option>
+                    {HOTEIS_DISNEY.map((hotel) => (
+                      <option key={hotel} value={hotel}>{hotel}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#1A1A2E] mb-1">Plano de Refeições</label>
+                  <select
+                    value={formData.plano_refeicoes}
+                    onChange={(e) => setFormData({ ...formData, plano_refeicoes: e.target.value })}
+                    className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35] bg-white"
+                  >
+                    <option value="">Selecione um plano...</option>
+                    {PLANOS_REFEICOES.map((plano) => (
+                      <option key={plano} value={plano}>{plano}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-3 p-4 bg-[#F8FAFC] rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      id="ingressos_disney"
+                      checked={formData.ingressos_disney}
+                      onChange={(e) => setFormData({ ...formData, ingressos_disney: e.target.checked })}
+                      className="w-5 h-5 text-[#FF6B35] rounded"
+                    />
+                    <label htmlFor="ingressos_disney" className="text-sm text-[#1A1A2E] font-medium">
+                      🎟️ Inclui Ingressos Disney
+                    </label>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      id="destaque"
+                      checked={formData.destaque}
+                      onChange={(e) => setFormData({ ...formData, destaque: e.target.checked })}
+                      className="w-5 h-5 text-[#FF6B35] rounded"
+                    />
+                    <label htmlFor="destaque" className="text-sm text-[#1A1A2E] font-medium">
+                      ⭐ Marcar como destaque
+                    </label>
+                  </div>
                 </div>
               </div>
 
