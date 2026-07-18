@@ -404,13 +404,13 @@ export default function Disney() {
                     <div className="aspect-video overflow-hidden">
                       <img src={parque.imagem} alt={parque.nome} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/20" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">{parque.nome}</h3>
-                      <p className="text-white/80 mb-3">{parque.descricao}</p>
+                      <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">{parque.nome}</h3>
+                      <p className="text-white/90 mb-3 drop-shadow-lg line-clamp-2">{parque.descricao}</p>
                       <div className="flex flex-wrap gap-2">
                         {parque.destaques.map((destaque, i) => (
-                          <span key={i} className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">
+                          <span key={i} className="px-3 py-1 bg-black/40 backdrop-blur-sm text-white text-xs rounded-full border border-white/20">
                             {destaque}
                           </span>
                         ))}
