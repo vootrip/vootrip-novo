@@ -687,17 +687,34 @@ export default function Disney() {
                 </div>
               ) : (
                 parques.map((parque) => (
-                  <div key={parque.id} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                    <div className="aspect-video overflow-hidden">
-                      <img src={parque.imagem} alt={parque.nome} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div key={parque.id} className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-[#1E293B]">
+                    {/* Imagem */}
+                    <div className="aspect-video overflow-hidden relative">
+                      <img src={parque.imagem} alt={parque.nome} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-transparent to-transparent" />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/20" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg">{parque.nome}</h3>
-                      <p className="text-white/90 mb-3 drop-shadow-lg line-clamp-2">{parque.descricao}</p>
-                      <div className="flex flex-wrap gap-2">
+
+                    {/* Conteúdo - abaixo da imagem, expande no hover */}
+                    <div className="p-6 transition-all duration-500">
+                      <h3 className="text-2xl font-bold text-white mb-3">{parque.nome}</h3>
+
+                      {/* Descrição - altura limitada por padrão, expande no hover */}
+                      <div className="overflow-hidden transition-all duration-500 max-h-[3.5rem] group-hover:max-h-[500px]">
+                        <p className="text-[#94A3B8] leading-relaxed">
+                          {parque.descricao}
+                        </p>
+                      </div>
+
+                      {/* Indicador "Ver mais" - some no hover */}
+                      <div className="flex items-center gap-2 mt-2 text-[#FF6B35] text-sm group-hover:hidden transition-all">
+                        <span>Ver descrição completa</span>
+                        <span>→</span>
+                      </div>
+
+                      {/* Badges - aparecem no hover */}
+                      <div className="flex flex-wrap gap-2 mt-4 overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100">
                         {parque.destaques.map((destaque, i) => (
-                          <span key={i} className="px-3 py-1 bg-black/40 backdrop-blur-sm text-white text-xs rounded-full border border-white/20">
+                          <span key={i} className="px-3 py-1.5 bg-[#FF6B35] text-white text-xs font-medium rounded-full">
                             {destaque}
                           </span>
                         ))}
