@@ -129,8 +129,31 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Certificações */}
+        <div data-ev-id="ev_cert1a2b3c" className="mt-12 pt-8 border-t border-white/10">
+          <p data-ev-id="ev_cert2b3c4d" className="text-white/50 text-sm text-center mb-4">
+            Certificações e Parcerias
+          </p>
+          <div data-ev-id="ev_cert3c4d5e" className="flex flex-wrap items-center justify-center gap-6">
+            <div data-ev-id="ev_cert4d5e6f" className="bg-white rounded-xl px-6 py-3 flex items-center justify-center">
+              <img
+                src="/cadastur-logo.png"
+                alt="Cadastur - Cadastro de Turismo do Ministério do Turismo"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <div data-ev-id="ev_cert5e6f7a" className="bg-white rounded-xl px-6 py-3 flex items-center justify-center">
+              <img
+                src="/orlando-travel-academy-logo.webp"
+                alt="Orlando Travel Academy - Certified Expert Orlando"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Bottom */}
-        <div data-ev-id="ev_ad33341cf6" className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div data-ev-id="ev_ad33341cf6" className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p data-ev-id="ev_d959a81488" className="text-white/50 text-sm">
             © 2024 Vootrip. Todos os direitos reservados.
           </p>
