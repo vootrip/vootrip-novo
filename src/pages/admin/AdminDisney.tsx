@@ -192,3 +192,105 @@ export default function AdminDisney() {
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                     className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                    placeholder="Ex: Pacote Mágico"
+                    required
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-[#1A1A2E] mb-1">Dias *</label>
+                    <input
+                      type="text"
+                      value={formData.dias}
+                      onChange={(e) => setFormData({ ...formData, dias: e.target.value })}
+                      className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                      placeholder="Ex: 7 dias / 6 noites"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#1A1A2E] mb-1">Preço *</label>
+                    <input
+                      type="text"
+                      value={formData.preco}
+                      onChange={(e) => setFormData({ ...formData, preco: e.target.value })}
+                      className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                      placeholder="Ex: A partir de R$ 8.990"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#1A1A2E] mb-1">O que inclui (um item por linha)</label>
+                  <textarea
+                    value={formData.inclui}
+                    onChange={(e) => setFormData({ ...formData, inclui: e.target.value })}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35] resize-none"
+                    placeholder="Passagem aérea&#10;6 noites de hotel&#10;4 dias de parque&#10;Traslado aeroporto"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#1A1A2E] mb-1">URL da imagem</label>
+                  <input
+                    type="url"
+                    value={formData.imagem}
+                    onChange={(e) => setFormData({ ...formData, imagem: e.target.value })}
+                    className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                    placeholder="https://..."
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-[#1A1A2E] mb-1">Descrição</label>
+                  <textarea
+                    value={formData.descricao}
+                    onChange={(e) => setFormData({ ...formData, descricao: e.target.value })}
+                    rows={2}
+                    className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FF6B35] resize-none"
+                    placeholder="Descrição opcional do pacote"
+                  />
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="destaque"
+                    checked={formData.destaque}
+                    onChange={(e) => setFormData({ ...formData, destaque: e.target.checked })}
+                    className="w-5 h-5 text-[#FF6B35] rounded"
+                  />
+                  <label htmlFor="destaque" className="text-sm text-[#1A1A2E]">Marcar como destaque</label>
+                </div>
+              </div>
+
+              <div className="flex gap-3 mt-6">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="flex-1 px-4 py-3 border border-[#E2E8F0] text-[#64748B] rounded-xl hover:bg-[#F1F5F9] transition-colors"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="flex-1 px-4 py-3 bg-[#FF6B35] text-white rounded-xl hover:bg-[#E55A2B] transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <><Loader2 className="w-5 h-5 animate-spin" /> Salvando...</>
+                  ) : (
+                    editingId ? 'Salvar Alterações' : 'Criar Pacote'
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </AdminLayout>
+  );
+}
