@@ -56,7 +56,9 @@ export function AdminLayout({ children, title }: AdminLayoutProps) {
   { icon: FileText, label: 'Blog', path: '/admin/blog' },
   { icon: MapPin, label: 'Destinos', path: '/admin/destinos' },
   { icon: Users, label: 'Parceiros', path: '/admin/parceiros' },
-  { icon: Briefcase, label: 'Vagas', path: '/admin/vagas' }];
+  { icon: Briefcase, label: 'Vagas', path: '/admin/vagas' },
+  { icon: Castle, label: 'Disney Pacotes', path: '/admin/disney' },
+  { icon: MapPin, label: 'Disney Parques', path: '/admin/disney-parques' }];
 
 
   return (
