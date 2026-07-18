@@ -5,6 +5,7 @@
  * - Do NOT use useRoutes() hook
  * - All page components must be default exports
  */
+
 import { Routes, Route } from 'react-router';
 import Index from '@/pages/Index';
 import FlightResults from '@/pages/FlightResults';
@@ -30,6 +31,9 @@ import AdminBlog from '@/pages/admin/AdminBlog';
 import AdminDestinos from '@/pages/admin/AdminDestinos';
 import AdminParceiros from '@/pages/admin/AdminParceiros';
 import AdminVagas from '@/pages/admin/AdminVagas';
+import AdminDisney from '@/pages/admin/AdminDisney';
+import AdminDisneyParks from '@/pages/admin/AdminDisneyParks';
+
 export default function App() {
   return (
     <Routes>
@@ -58,6 +62,8 @@ export default function App() {
       <Route path="/admin/destinos" element={<AdminDestinos />} />
       <Route path="/admin/parceiros" element={<AdminParceiros />} />
       <Route path="/admin/vagas" element={<AdminVagas />} />
+      <Route path="/admin/disney" element={<AdminDisney />} />
+      <Route path="/admin/disney-parques" element={<AdminDisneyParks />} />
     </Routes>
   );
 }
