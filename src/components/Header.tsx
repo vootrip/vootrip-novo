@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router';
-import { Plane, Menu, User, Heart, Newspaper } from 'lucide-react';
+import { Plane, Menu, User, Heart, Newspaper, Castle } from 'lucide-react';
 import { TripFormModal } from '@/components/TripFormModal';
 import { Sidebar } from '@/components/Sidebar';
 import { useFavorites } from '@/hooks/useFavorites';
@@ -60,6 +60,13 @@ export function Header({ transparent = false }: HeaderProps) {
 
             {/* Desktop Actions */}
             <div data-ev-id="ev_3919053bad" className="flex items-center gap-2 lg:gap-4">
+              <Link
+                to="/disney"
+                className="hidden sm:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#6C63FF] to-[#9B5DE5] text-white rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300">
+
+                <Castle className="w-4 h-4" />
+                <span data-ev-id="ev_disneybtn">Disney</span>
+              </Link>
               <Link
                 to="/blog"
                 className="hidden sm:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#FF6B35] to-[#FF9F1C] text-white rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300">
