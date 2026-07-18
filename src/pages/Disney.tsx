@@ -805,7 +805,7 @@ export default function Disney() {
               </div>
               <div className="relative">
                 <img
-                  src="/images/magic-kingdom-entrance.jpg"
+                  src="/magic-kingdom-vehicle-entrance.jpg"
                   alt="Entrada do Magic Kingdom em Orlando"
                   className="rounded-2xl shadow-xl w-full h-auto"
                 />
