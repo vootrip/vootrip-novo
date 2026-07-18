@@ -11,6 +11,10 @@ interface FormData {
   inclui: string;
   imagem: string;
   descricao: string;
+  periodo_estadia: string;
+  hotel: string;
+  ingressos_disney: boolean;
+  plano_refeicoes: string;
 }
 
 const emptyForm: FormData = {
@@ -20,9 +24,43 @@ const emptyForm: FormData = {
   destaque: false,
   inclui: '',
   imagem: '',
-  descricao: ''
+  descricao: '',
+  periodo_estadia: '',
+  hotel: '',
+  ingressos_disney: false,
+  plano_refeicoes: ''
 };
 
+// Lista de hotéis Disney para seleção
+const HOTEIS_DISNEY = [
+  'Disney\'s All-Star Movies Resort',
+  'Disney\'s All-Star Music Resort',
+  'Disney\'s All-Star Sports Resort',
+  'Disney\'s Art of Animation Resort',
+  'Disney\'s Pop Century Resort',
+  'Disney\'s Caribbean Beach Resort',
+  'Disney\'s Coronado Springs Resort',
+  'Disney\'s Port Orleans Resort - French Quarter',
+  'Disney\'s Port Orleans Resort - Riverside',
+  'Disney\'s Animal Kingdom Lodge',
+  'Disney\'s Beach Club Resort',
+  'Disney\'s BoardWalk Inn',
+  'Disney\'s Contemporary Resort',
+  'Disney\'s Grand Floridian Resort & Spa',
+  'Disney\'s Polynesian Village Resort',
+  'Disney\'s Wilderness Lodge',
+  'Disney\'s Yacht Club Resort',
+  'Outro hotel (especificar na descrição)'
+];
+
+// Planos de refeições Disney
+const PLANOS_REFEICOES = [
+  'Sem plano de refeições',
+  'Quick-Service Dining Plan',
+  'Disney Dining Plan (Standard)',
+  'Disney Dining Plan Plus',
+  'Deluxe Dining Plan'
+];
 export default function AdminDisney() {
   const { packages, loading, createPackage, updatePackage, deletePackage } = useDisneyPackages();
   const [isModalOpen, setIsModalOpen] = useState(false);
