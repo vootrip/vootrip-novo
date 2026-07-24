@@ -68,22 +68,6 @@ const headerCategories: CategoryItem[] = [
   color: 'text-cyan-500',
   action: 'whatsapp',
   whatsappMsg: 'Olá! Gostaria de informações sobre cruzeiros.'
-},
-{
-  id: 'destinos',
-  label: 'Destinos',
-  icon: <MapPin className="w-6 h-6" />,
-  color: 'text-pink-500',
-  action: 'link',
-  href: '/destinos'
-},
-{
-  id: 'blog',
-  label: 'Blog',
-  icon: <FileText className="w-6 h-6" />,
-  color: 'text-amber-500',
-  action: 'link',
-  href: '/blog'
 }
 ];
 
@@ -182,20 +166,6 @@ export function Header({ transparent = false }: HeaderProps) {
 
             {/* Desktop Actions */}
             <div className="flex items-center gap-2 lg:gap-4">
-              <Link
-                to="/favoritos"
-                className={`relative p-2 rounded-full transition-colors ${
-                shouldBeTransparent ?
-                'text-white hover:bg-white/10' :
-                'text-[#64748B] hover:bg-[#F1F5F9]'} ${
-                favoritesCount > 0 ? shouldBeTransparent ? 'text-red-400' : 'text-red-500' : ''}`}>
-                <Heart className={`w-5 h-5 ${favoritesCount > 0 ? 'fill-current' : ''}`} />
-                {favoritesCount > 0 &&
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#FF6B35] text-white text-xs font-bold rounded-full flex items-center justify-center">
-                    {favoritesCount > 9 ? '9+' : favoritesCount}
-                  </span>
-                }
-              </Link>
               <button
               onClick={() => setTripModalOpen(true)}
               className={`hidden sm:flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${
