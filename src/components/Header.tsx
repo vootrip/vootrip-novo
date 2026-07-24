@@ -105,14 +105,7 @@ export function Header({ transparent = false }: HeaderProps) {
 
               {/* Logo */}
               <Link to="/" className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#FF6B35] to-[#FF9F1C] rounded-xl flex items-center justify-center">
-                  <Plane className="w-6 h-6 text-white" />
-                </div>
-                <span className={`text-2xl font-bold ${
-                shouldBeTransparent ? 'text-white' : 'text-[#1A1A2E]'}`
-                }>
-                  voo<span className="text-[#FF6B35]">trip</span>
-                </span>
+                <img src="/Logo_Vootrip.jpg" alt="Vootrip - Ingressos para os parques da Disney" className="h-12 w-auto rounded-xl" />
               </Link>
             </div>
 

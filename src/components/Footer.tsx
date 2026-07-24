@@ -59,13 +59,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#FF6B35] to-[#FF9F1C] rounded-xl flex items-center justify-center">
-                <Plane className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold">
-                voo<span className="text-[#FF6B35]">trip</span>
-              </span>
+            <Link to="/" className="flex items-center gap-2 bg-white rounded-xl px-2 py-1.5 w-fit">
+              <img src="/Logo_Vootrip.jpg" alt="Vootrip - Ingressos para os parques da Disney" className="h-12 w-auto rounded-lg" />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed">
               Sua agência de viagens completa. Realize o sonho de conhecer a Disney

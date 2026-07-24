@@ -60,13 +60,8 @@ export function Sidebar({ isOpen, onClose, onOpenTripModal }: SidebarProps) {
       }>
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-white/10">
-          <Link to="/" onClick={onClose} className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#FF6B35] to-[#FF9F1C] rounded-xl flex items-center justify-center">
-              <Plane className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold text-white">
-              voo<span className="text-[#FF6B35]">trip</span>
-            </span>
+          <Link to="/" onClick={onClose} className="flex items-center gap-2 bg-white rounded-xl px-2 py-1.5">
+            <img src="/Logo_Vootrip.jpg" alt="Vootrip - Ingressos para os parques da Disney" className="h-10 w-auto rounded-lg" />
           </Link>
           <button
           onClick={onClose}
