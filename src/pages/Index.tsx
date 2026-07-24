@@ -1,5 +1,4 @@
 import { Layout } from '@/components/Layout';
-import { SearchTabs } from '@/components/SearchTabs';
 import { PopularDestinations } from '@/components/home/PopularDestinations';
 import { WhyVootrip } from '@/components/home/WhyVootrip';
 import { Partners } from '@/components/home/Partners';
@@ -41,11 +40,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      {/* Search Tabs - Sobrepondo o hero */}
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20">
-        <SearchTabs />
-      </div>
 
       {/* Spacer */}
       <div className="h-12" />
