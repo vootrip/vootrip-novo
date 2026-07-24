@@ -105,7 +105,7 @@ export function Header({ transparent = false }: HeaderProps) {
       shouldBeTransparent ? 'bg-transparent' : 'bg-white shadow-md'}`
       }>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-16 lg:h-28">
             {/* Menu Button + Logo */}
             <div className="flex items-center gap-3">
               {/* Menu Hamburger */}
