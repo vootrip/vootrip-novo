@@ -41,9 +41,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Spacer */}
-      <div className="h-12" />
-
       {/* Popular Destinations */}
       <PopularDestinations />
 
