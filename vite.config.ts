@@ -16,6 +16,8 @@ import { constants as fsConstants } from 'fs';
 import path from 'path';
 import { defineConfig, type PluginOption, type ViteDevServer } from 'vite';
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 function tailwindDevPlugin(): PluginOption {
 	const themeCssPath = path.resolve(__dirname, './src/theme.css');
 	let themeCssCache: string | null = null;
@@ -92,7 +94,7 @@ export default defineConfig(() => {
 			},
 			dedupe: ['react', 'react-dom', 'react-router'],
 		},
-		plugins: [tailwindcss(), tailwindDevPlugin(), react()],
+		plugins: [tailwindcss(), tailwindDevPlugin(), react(), cloudflare()],
 		build: { assetsInlineLimit: 100000 },
 	};
 });
