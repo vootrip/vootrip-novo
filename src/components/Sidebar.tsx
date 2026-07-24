@@ -25,8 +25,6 @@ const menuItems = [
 
 
 const exploreItems = [
-{ icon: Compass, label: 'Explore Destinos', path: '/destinos', color: '#00B4D8' },
-{ icon: MapPin, label: 'Ofertas', path: '/ofertas', color: '#FF6B35' },
 { icon: Castle, label: 'Disney', path: '/disney', color: '#FF6B35' },
 { icon: Smartphone, label: 'Chip Internacional', path: 'https://www.v7fhugd.com/32HKQB8/2CTPL/?__efq=1XzZiNTLF3AaKFjnpcw4rAz8f9NlCv33usbCXc6VqFM', color: '#22C55E', external: true }];
 
